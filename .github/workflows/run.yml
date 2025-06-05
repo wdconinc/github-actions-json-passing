@@ -13,9 +13,11 @@ jobs:
     - name: set
       id: set
       run:
-        cat << 'EOF' >> $GITHUB_OUTPUT
-        github='${{ toJson(github) }}'
+        github=$(cat << EOF
+        ${{ toJson(github) }}
         EOF
+        )
+        echo github=$github >> $GITHUB_OUTPUT
 
   get:
     runs-on: ubuntu-24.04
