@@ -25,4 +25,4 @@ jobs:
     - name: get
       id: get
       run: |
-        echo '${{ toJson(needs.set.outputs.event) }}'
+        echo '${{ fromJson(needs.set.outputs.event) }}'
