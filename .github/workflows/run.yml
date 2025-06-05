@@ -15,7 +15,7 @@ jobs:
       run: |
         github=$(cat << 'EOF'
         ${{ toJson(github) }}
-        'EOF'
+        EOF
         )
         echo "github=$github" >> $GITHUB_OUTPUT
 
