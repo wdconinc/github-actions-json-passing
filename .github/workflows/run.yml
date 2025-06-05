@@ -26,4 +26,4 @@ jobs:
       id: get
       run: |
         echo '${{ needs.set.outputs.event }}'
-        echo '${{ needs.set.outputs.event.after }}'
+        echo '${{ needs.set.outputs.event }}' | jq -r .after
