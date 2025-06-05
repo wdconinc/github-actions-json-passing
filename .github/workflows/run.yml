@@ -8,13 +8,13 @@ jobs:
   set:
     runs-on: ubuntu-24.04
     outputs:
-      github: ${{ steps.set.outputs.github }}
+      event: ${{ steps.set.outputs.event }}
     steps:
     - name: set
       id: set
       run: |
-        echo "github<<EOF" >> $GITHUB_OUTPUT
-        echo "${{ toJson(github) }}" >> $GITHUB_OUTPUT
+        echo "event<<EOF" >> $GITHUB_OUTPUT
+        echo "${{ toJson(github.event) }}" >> $GITHUB_OUTPUT
         echo "EOF" >> $GITHUB_OUTPUT
 
   get:
@@ -25,4 +25,4 @@ jobs:
     - name: get
       id: get
       run: |
-        echo '${{ toJson(needs.set.outputs.github) }}'
+        echo '${{ toJson(needs.set.outputs.event) }}'
