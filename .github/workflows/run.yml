@@ -25,4 +25,4 @@ jobs:
     - name: get
       id: get
       run: |
-        echo '${{ needs.set.outputs.event.after }}'
+        echo '${{ needs.set.outputs.event }}' | jq -r .after
