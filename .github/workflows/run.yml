@@ -13,11 +13,9 @@ jobs:
     - name: set
       id: set
       run: |
-        github=$(cat << 'EOF'
-        ${{ toJson(github) }}
-        EOF
-        )
-        echo "github=$github" >> $GITHUB_OUTPUT
+        echo "github<<EOF" >> $GITHUB_OUTPUT
+        echo "${{ toJson(github) }}" >> $GITHUB_OUTPUT
+        echo "EOF" >> $GITHUB_OUTPUT
 
   get:
     runs-on: ubuntu-24.04
