@@ -23,4 +23,4 @@ jobs:
     - name: get
       id: get
       run:
-        echo '${{ fromJson(needs.set.outputs.github) }}'
+        echo '${{ toJson(needs.set.outputs.github) }}'
