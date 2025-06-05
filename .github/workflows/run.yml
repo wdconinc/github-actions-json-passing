@@ -1,0 +1,26 @@
+name: run
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  set:
+    runs-on: ubuntu-24.04
+    outputs:
+      github: ${{ steps.set.outputs.github }}
+    steps:
+    - name: set
+      id: set
+      run:
+        echo "github=${{ toJson(github) }}" >> $GITHUB_OUTPUT
+
+  get:
+    runs-on: ubuntu-24.04
+    needs:
+    - set
+    steps:
+    - name: get
+      id: get
+      run:
+        echo "${{ fromJson(needs.get.outputs.github).job }}"
