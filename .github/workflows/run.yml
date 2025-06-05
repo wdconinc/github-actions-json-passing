@@ -13,9 +13,9 @@ jobs:
     - name: set
       id: set
       run: |
-        echo "event<<EOF" >> $GITHUB_OUTPUT
-        echo "${{ toJson(github.event) }}" >> $GITHUB_OUTPUT
-        echo "EOF" >> $GITHUB_OUTPUT
+        echo 'event<<EOF' >> $GITHUB_OUTPUT
+        echo '${{ toJson(github.event) }}' >> $GITHUB_OUTPUT
+        echo 'EOF' >> $GITHUB_OUTPUT
 
   get:
     runs-on: ubuntu-24.04
