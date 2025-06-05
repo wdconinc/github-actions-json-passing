@@ -17,7 +17,7 @@ jobs:
         ${{ toJson(github) }}
         EOF
         )
-        echo github=$github >> $GITHUB_OUTPUT
+        echo "github=$github" >> $GITHUB_OUTPUT
 
   get:
     runs-on: ubuntu-24.04
