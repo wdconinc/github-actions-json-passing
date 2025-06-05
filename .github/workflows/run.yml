@@ -25,4 +25,4 @@ jobs:
     - name: get
       id: get
       run: |
-        echo '${{ needs.set.outputs.event }}'
+        echo '${{ needs.set.outputs.event.after }}'
