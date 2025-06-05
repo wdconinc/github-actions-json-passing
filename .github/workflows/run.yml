@@ -13,7 +13,9 @@ jobs:
     - name: set
       id: set
       run:
-        echo "::set-output name=github::'${{ toJson(github) }}'"
+        cat << 'EOF' >> $GITHUB_OUTPUT
+        github='${{ toJson(github) }}'
+        EOF
 
   get:
     runs-on: ubuntu-24.04
