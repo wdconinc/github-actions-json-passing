@@ -13,7 +13,7 @@ jobs:
     - name: set
       id: set
       run:
-        github=$(cat << EOF
+        github=$(cat << 'EOF'
         ${{ toJson(github) }}
         EOF
         )
