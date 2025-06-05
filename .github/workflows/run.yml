@@ -12,7 +12,7 @@ jobs:
     steps:
     - name: set
       id: set
-      run:
+      run: |
         github=$(cat << 'EOF'
         ${{ toJson(github) }}
         'EOF'
@@ -26,5 +26,5 @@ jobs:
     steps:
     - name: get
       id: get
-      run:
+      run: |
         echo '${{ toJson(needs.set.outputs.github) }}'
