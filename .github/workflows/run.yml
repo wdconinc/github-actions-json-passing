@@ -13,7 +13,7 @@ jobs:
     - name: set
       id: set
       run:
-        echo "::set-output github='${{ toJson(github) }}'"
+        echo "::set-output name=github::'${{ toJson(github) }}'"
 
   get:
     runs-on: ubuntu-24.04
